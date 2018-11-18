@@ -23,4 +23,5 @@ urlpatterns = [
     path('', views.LandingUI.as_view(), name='landing'),
     url('', include('account.urls', namespace='account')),
     url('', include('django.contrib.auth.urls')),
+    url('', include('booking.urls', namespace='booking'))
 ]

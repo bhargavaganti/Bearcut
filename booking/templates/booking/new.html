@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Book a new appointment - Bearcut</title>
+  </head>
+  <body>
+    <p><strong>Hello</strong>, {{ user.username }}! <br>
+      Ready to cut your hair?<br>
+    </p>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li> {{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Book">
+      </form>
+  </body>
+</html>

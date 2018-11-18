@@ -15,6 +15,11 @@
       {% else %}
         <li><a href="{% url 'account:login' %}">Sign in</a></li>
       {% endif %}
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'booking:book' %}">Book</a></li>
+        <li><a href="{% url 'booking:history' %}">History</a></li>
+      {% else %}
+      {% endif %}
     </ul>
   </body>
 </html>
