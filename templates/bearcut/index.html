@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Bearcut - Jakarta</title>
+  </head>
+  <body>
+    <h1>Bearcut</h1>
+    <ul>
+      <li><a href="admin/">Admin</a></li>
+      <li><a href="{% url 'account:signup' %}">Sign up</a></li>
+      {% if user.is_authenticated %}
+        <li><a href="{% url 'account:logout' %}">Sign out</a></li>
+      {% else %}
+        <li><a href="{% url 'account:login' %}">Sign in</a></li>
+      {% endif %}
+    </ul>
+  </body>
+</html>
